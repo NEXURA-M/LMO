@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMINA — Register Now (₹250)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, .brand { font-family: 'Space Grotesk', sans-serif; }
+    body { background: #050510; overflow-x: hidden; }
+    .blob { position: fixed; border-radius: 50%; filter: blur(140px); opacity: 0.35; z-index: -1; animation: float 14s ease-in-out infinite; }
+    .blob-1 { width: 550px; height: 550px; background: #7c3aed; top: -180px; left: -150px; }
+    .blob-2 { width: 450px; height: 450px; background: #06b6d4; bottom: -120px; right: -120px; animation-delay: -5s; }
+    .blob-3 { width: 400px; height: 400px; background: #f59e0b; top: 45%; left: 55%; animation-delay: -9s; opacity: 0.22; }
+    @keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-40px) scale(1.1); } }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.08); }
+    .gradient-text { background: linear-gradient(135deg, #a78bfa, #22d3ee, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gold-text { background: linear-gradient(135deg, #fbbf24, #f59e0b, #fcd34d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .btn-primary { background: linear-gradient(135deg, #7c3aed, #06b6d4); transition: all 0.3s; }
+    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(124,58,237,0.5); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-gold { background: linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b); color: #1a1000; transition: all 0.3s; }
+    .btn-gold:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(251,191,36,0.5); }
+    .btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
+    .mono { font-family: 'Space Grotesk', monospace; letter-spacing: 2px; }
+    .fade-in { animation: fadeIn 0.6s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    input:focus { outline: none; border-color: #22d3ee; box-shadow: 0 0 0 3px rgba(34,211,238,0.15); }
+    .qr-frame {
+      background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(124,58,237,0.15));
+      border: 2px solid rgba(251,191,36,0.4);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: 0 0 40px rgba(251,191,36,0.2);
+    }
+    .step-num {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pulse-dot { animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .copy-btn {
+      background: rgba(34,211,238,0.1);
+      border: 1px solid rgba(34,211,238,0.3);
+      color: #67e8f9;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background: rgba(34,211,238,0.2);
+      border-color: rgba(34,211,238,0.6);
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.4); border-radius: 3px; }
+    .spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #1a1000;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body class="min-h-screen text-white px-4 py-8 flex items-center justify-center">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="w-full max-w-lg fade-in">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-5xl md:text-6xl font-bold brand gradient-text tracking-tight">LUMINA</h1>
+      <p class="text-white/40 text-xs mt-2 tracking-[5px] uppercase">Created by Devil Developers</p>
+      <div class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30">
+        <span>💎</span>
+        <span class="text-amber-300 text-xs font-semibold tracking-widest uppercase">Register · ₹250</span>
+      </div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="glass rounded-3xl p-6 md:p-8 shadow-2xl">
+
+      <!-- STEP FORM -->
+      <div id="step-form">
+        <!-- Info banner -->
+        <div class="rounded-xl p-4 mb-6" style="background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.25);">
+          <p class="text-amber-300 text-sm font-semibold mb-1">🏆 Winner Gets Any Software Built</p>
+          <p class="text-white/50 text-xs">AI · Web · App · Game · Custom — registered users eligible for Lucky Draw</p>
+        </div>
+
+        <!-- Step 1: QR -->
+        <div class="mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="step-num">1</span>
+            <p class="text-sm font-semibold">Pay ₹250 via QR</p>
+          </div>
+          <p class="text-white/50 text-xs mb-4 ml-10">Scan this QR in your payment app (JazzCash / EasyPaisa / Bank) and send <b class="gold-text">₹250</b>.</p>
+
+          <div class="flex flex-col items-center">
+            <div class="qr-frame">
+              <img id="qr-image" src="qr.png" alt="Payment QR" class="w-56 h-56 rounded-xl object-contain bg-white p-2" />
+              <div id="qr-fallback" class="hidden w-56 h-56 rounded-xl bg-white/5 flex-col items-center justify-center text-center p-4">
+                <span class="text-4xl mb-2">📷</span>
+                <span class="text-xs text-white/40">qr.png upload karo repo me</span>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center gap-2 text-xs">
+              <span class="text-white/40">Amount:</span>
+              <span class="mono font-bold gold-text text-lg">₹250</span>
+              <button onclick="copyAmount()" class="copy-btn text-[10px] px-2 py-1 rounded">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/5 my-6"></div>
+
+        <!-- Step 2: Details -->
+        <div class="mb-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="step-num">2</span>
+            <p class="text-sm font-semibold">Fill your details</p>
+          </div>
+
+          <div class="ml-10 space-y-4">
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-widest mb-2">Your Name</label>
+              <input id="name-input" type="text" placeholder="e.g. Aryan Sharma" autocomplete="off"
+                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 transition text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-widest mb-2">Your WhatsApp Number</label>
+              <input id="whatsapp-input" type="tel" placeholder="+92 300 1234567" autocomplete="off"
+                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 transition text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-widest mb-2">
+                Number You Paid From <span class="text-white/20">(money transfer source)</span>
+              </label>
+              <input id="paidfrom-input" type="tel" placeholder="+92 300 7654321" autocomplete="off"
+                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 transition text-sm" />
+              <p class="text-[10px] text-white/30 mt-1">Woh number jis se ₹250 transfer kiya — verify ke liye zaroori.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button onclick="handleSubmit()" id="submit-btn"
+          class="btn-gold w-full py-3.5 rounded-xl font-bold text-sm tracking-wide mt-2 flex items-center justify-center gap-2">
+          <span>Submit & Continue on GitHub</span>
+          <span>→</span>
+        </button>
+
+        <div id="error-area" class="hidden mt-4 text-red-400 text-sm text-center p-3 bg-red-500/10 rounded-xl border border-red-500/20"></div>
+
+        <p class="text-white/30 text-xs text-center leading-relaxed mt-4">
+          Submit ke baad GitHub tab khulega — green <b class="text-emerald-400">"Submit new issue"</b> button dabana zaroori hai.
+        </p>
+      </div>
+
+      <!-- SUCCESS -->
+      <div id="success-area" class="hidden text-center py-6">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
+          <span class="text-3xl">✓</span>
+        </div>
+        <h3 class="text-xl font-semibold brand mb-2">Registration Submitted</h3>
+        <p class="text-white/50 text-sm max-w-sm mx-auto leading-relaxed mb-5">
+          Aapki request <b class="text-emerald-300">unverified</b> status ke saath queue me hai.
+          Admin verify karega aur aapko WhatsApp pe confirm karega.
+        </p>
+        <div class="glass rounded-xl p-4 text-left text-xs space-y-2">
+          <p class="text-white/40 flex justify-between"><span>Name:</span><span id="done-name" class="text-white/80"></span></p>
+          <p class="text-white/40 flex justify-between"><span>WhatsApp:</span><span id="done-wa" class="text-white/80"></span></p>
+          <p class="text-white/40 flex justify-between"><span>Paid From:</span><span id="done-from" class="text-white/80"></span></p>
+          <p class="text-white/40 flex justify-between"><span>Amount:</span><span class="gold-text font-bold">₹250</span></p>
+          <p class="text-white/40 flex justify-between"><span>Status:</span><span class="text-amber-300 font-semibold">⏳ Unverified</span></p>
+        </div>
+        <button onclick="openAgain()" class="btn-primary mt-5 px-6 py-2.5 rounded-xl font-semibold text-sm w-full">Open GitHub again</button>
+        <button onclick="resetForm()" class="mt-3 text-white/30 text-xs underline hover:text-white/60">Submit another</button>
+      </div>
+    </div>
+
+    <!-- Footer nav -->
+    <div class="flex items-center justify-center gap-4 mt-8 text-xs">
+      <a href="https://nexura-m.github.io/LUMINA/index.html" class="text-white/30 hover:text-white/60 transition">← Register ID</a>
+      <span class="text-white/10">·</span>
+      <a href="https://nexura-m.github.io/LUMINA/LD.html" class="text-white/30 hover:text-white/60 transition">Lucky Draw</a>
+      <span class="text-white/10">·</span>
+      <a href="https://nexura-m.github.io/LUMINA/ms.html" class="text-white/30 hover:text-white/60 transition">Dashboard</a>
+    </div>
+
+    <p class="text-center text-white/20 text-[10px] mt-4 mono">
+      SECURE · VERIFIED BY DEVIL DEVELOPERS
+    </p>
+  </div>
+
+  <script>
+    // ✅ NAYA REPO — Sirf registrations
+    const REPO = 'NEXURA-M/LMO';
+
+    let lastIssueUrl = '';
+    let isSubmitting = false;
+
+    // ─── Unicode-safe base64 ───
+    function b64Encode(str) {
+      return btoa(unescape(encodeURIComponent(str)));
+    }
+
+    // ─── Copy amount ───
+    function copyAmount() {
+      const text = '250';
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+      function showCopied() {
+        const btn = document.querySelector('.copy-btn');
+        if (!btn) return;
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copied';
+        setTimeout(() => btn.textContent = orig, 1200);
+      }
+      function fallbackCopy() {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); showCopied(); } catch (e) { console.error(e); }
+        document.body.removeChild(ta);
+      }
+    }
+
+    // ─── Phone helpers ───
+    function normalizePhone(p) {
+      return (p || '').replace(/[\s\-().]/g, '');
+    }
+    function isValidPhone(p) {
+      const n = normalizePhone(p);
+      return /^\+?\d{7,15}$/.test(n);
+    }
+
+    // ─── Show/hide error ───
+    function showError(msg) {
+      const el = document.getElementById('error-area');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    function hideError() {
+      document.getElementById('error-area').classList.add('hidden');
+    }
+
+    // ─── QR fallback ───
+    (function setupQRFallback() {
+      const img = document.getElementById('qr-image');
+      const fb = document.getElementById('qr-fallback');
+      function showFallback() {
+        img.classList.add('hidden');
+        fb.classList.remove('hidden');
+        fb.classList.add('flex');
+      }
+      img.addEventListener('error', showFallback);
+      if (img.complete && img.naturalWidth === 0) showFallback();
+    })();
+
+    // ─── Submit ───
+    function handleSubmit() {
+      if (isSubmitting) return;
+      hideError();
+
+      const name = document.getElementById('name-input').value.trim();
+      const whatsapp = document.getElementById('whatsapp-input').value.trim();
+      const paidFrom = document.getElementById('paidfrom-input').value.trim();
+
+      // Validations
+      if (name.length < 2 || name.length > 50) {
+        return showError('Valid name daalo (2–50 characters).');
+      }
+      if (!/^[a-zA-Z\u0600-\u06FF\s.'-]+$/.test(name)) {
+        return showError("Name me sirf letters, spaces, aur . ' - allowed hain.");
+      }
+      if (!isValidPhone(whatsapp)) {
+        return showError('Valid WhatsApp number daalo (e.g. +92 300 1234567).');
+      }
+      if (!isValidPhone(paidFrom)) {
+        return showError('Valid paid-from number daalo (jis se payment bheja).');
+      }
+      if (normalizePhone(whatsapp) === normalizePhone(paidFrom)) {
+        return showError('WhatsApp aur Paid-From number different hone chahiye.');
+      }
+
+      isSubmitting = true;
+      const btn = document.getElementById('submit-btn');
+      const origHTML = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span><span>Opening GitHub...</span>';
+
+      try {
+        // Build payload
+        const payload = {
+          kind: 'register',
+          name: name,
+          whatsapp: normalizePhone(whatsapp),
+          paidFrom: normalizePhone(paidFrom),
+          amount: 250,
+          status: 'unverified',
+          timestamp: new Date().toISOString()
+        };
+
+        const encodedBody = b64Encode(JSON.stringify(payload));
+        const title = encodeURIComponent(`[REGISTER] ${name} — ${payload.whatsapp}`);
+        lastIssueUrl = `https://github.com/${REPO}/issues/new?title=${title}&body=${encodeURIComponent(encodedBody)}`;
+
+        // Open GitHub new issue page
+        const win = window.open(lastIssueUrl, '_blank');
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          // Popup blocked
+          showError('Popup blocked. Please allow popups ya "Open GitHub again" button dabao.');
+        }
+
+        // Show success screen
+        document.getElementById('done-name').textContent = name;
+        document.getElementById('done-wa').textContent = whatsapp;
+        document.getElementById('done-from').textContent = paidFrom;
+
+        document.getElementById('step-form').classList.add('hidden');
+        document.getElementById('success-area').classList.remove('hidden');
+      } catch (e) {
+        console.error(e);
+        showError('Kuch galat ho gaya. Dobara try karo.');
+      } finally {
+        isSubmitting = false;
+        btn.disabled = false;
+        btn.innerHTML = origHTML;
+      }
+    }
+
+    // ─── Open GitHub again ───
+    function openAgain() {
+      if (lastIssueUrl) {
+        window.open(lastIssueUrl, '_blank');
+      } else {
+        showError('Koi purana link nahi mila — form dobara bharo.');
+      }
+    }
+
+    // ─── Reset form ───
+    function resetForm() {
+      document.getElementById('step-form').classList.remove('hidden');
+      document.getElementById('success-area').classList.add('hidden');
+      document.getElementById('name-input').value = '';
+      document.getElementById('whatsapp-input').value = '';
+      document.getElementById('paidfrom-input').value = '';
+      lastIssueUrl = '';
+      hideError();
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ─── Enter key submits form ───
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !document.getElementById('step-form').classList.contains('hidden')) {
+        const active = document.activeElement;
+        if (active && active.tagName === 'INPUT') {
+          e.preventDefault();
+          handleSubmit();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
